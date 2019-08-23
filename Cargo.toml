@@ -8,6 +8,5 @@ edition = "2018"
 
 [dependencies]
 clap = { version = "2", features = ["yaml"] }
-spinners = "1.0.0"
 rusoto_core = "0.40.0"
 rusoto_ssm = "0.40.0"
