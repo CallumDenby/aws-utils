@@ -36,21 +36,13 @@ pub fn ssm_search(matches: &ArgMatches) {
     let mut results = Vec::new();
     let mut next_token = String::new();
 
-    'main: loop {
-        let response: Vec<ParameterMetadata> = match ssm_fetch_params(&client, next_token) {
-            Some((token, parameters)) => {
-                next_token = token;
-                parameters.iter().filter(|parameter| {
-                    let name = parameter.name.as_ref().unwrap();
-
-                    name.contains(input)
-                }).cloned().collect()
-            },
-            None => break 'main
-        };
+    while let Some((token, parameters)) = ssm_fetch_params(&client, next_token) {
+        next_token = token;
+        let response = parameters.into_iter().filter(|parameter| {
+            parameter.name.as_ref().unwrap().contains(input)
+        });
         results.extend(response);
-
-        thread::sleep(Duration::from_millis(100));
+        thread::sleep(Duration::from_millis(100))
     }
 
     for result in results.iter() {
