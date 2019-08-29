@@ -10,3 +10,4 @@ edition = "2018"
 clap = { version = "2", features = ["yaml"] }
 rusoto_core = "0.40.0"
 rusoto_ssm = "0.40.0"
+rusoto_s3 = "0.40.0"

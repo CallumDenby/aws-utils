@@ -2,6 +2,7 @@ mod aws;
 mod commands;
 
 use clap::{load_yaml, App};
+use commands::s3::s3_commands;
 use commands::ssm::ssm_commands;
 
 fn main() {
@@ -10,6 +11,7 @@ fn main() {
 
     match matches.subcommand() {
         ("ssm", Some(matches)) => ssm_commands(matches),
+        ("s3", Some(matches)) => s3_commands(matches),
         _ => (),
     }
 }
