@@ -1,5 +1,5 @@
 > WIP
 
-# AWS Tools
+# AWS Utils
 
-A collection of tools for awkward operations within AWS
+A collection of utilities for awkward operations within AWS
