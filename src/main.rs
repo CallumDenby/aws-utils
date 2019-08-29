@@ -1,13 +1,14 @@
+mod app;
 mod aws;
 mod commands;
 
-use clap::{load_yaml, App};
+use app::build_cli;
 use commands::s3::s3_commands;
 use commands::ssm::ssm_commands;
 
 fn main() {
-    let yaml = load_yaml!("cli.yml");
-    let matches = App::from_yaml(yaml).get_matches();
+    let app = build_cli();
+    let matches = app.get_matches();
 
     match matches.subcommand() {
         ("ssm", Some(matches)) => ssm_commands(matches),
