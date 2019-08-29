@@ -8,7 +8,7 @@ sudo: required
 
 env:
   global:
-    - CRATE_NAME=aws-tools
+    - CRATE_NAME=aws-utils
 
 matrix:
   include:

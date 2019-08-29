@@ -1,5 +1,5 @@
 [package]
-name = "aws-tools"
+name = "aws-utils"
 version = "0.1.0"
 authors = ["Callum <me@callumdenby.com>"]
 edition = "2018"

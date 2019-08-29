@@ -17,9 +17,9 @@ main() {
 
     test -f Cargo.lock || cargo generate-lockfile
 
-    cross rustc --bin aws-tools --target $TARGET --release -- -C lto
+    cross rustc --bin aws-utils --target $TARGET --release -- -C lto
 
-    cp target/$TARGET/release/aws-tools $stage/
+    cp target/$TARGET/release/aws-utils $stage/
 
     cd $stage
     tar czf $src/$CRATE_NAME-$TRAVIS_TAG-$TARGET.tar.gz *
