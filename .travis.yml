@@ -50,7 +50,7 @@ script:
   - cargo test --target $TARGET --verbose
 
 before_deploy:
-  - bash ci/before_deploy.bash
+  - bash ci/before_deploy.sh
 
 deploy:
   provider: releases
