@@ -76,7 +76,7 @@ deploy:
     # deploy only if we push a tag
     tags: true
     # deploy only on stable channel that has TARGET env variable sets
-    condition: $TRAVIS_RUST_VERSION = stable && $TARGET != "x86_64-pc-windows-msvc"
+    condition: $TRAVIS_RUST_VERSION = stable
 
 notifications:
   email:
